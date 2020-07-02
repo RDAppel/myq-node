@@ -1,5 +1,6 @@
 const request = require('request')
 const base = 'https://myqexternal.myqdevice.com/api/v4/'
+const appId = 'NWknvuBd7LoFHfXmKNMBcgajXtZEgKUh4V7WNzMidrpUUluDpVYVZx+xT4PCM5Kx'
 
 let states = {
   2: 'Closed',
@@ -24,10 +25,10 @@ const login = function(user, password, deviceId) {
 
 function headers(token) {
     let base = {
-        Culture: 'en',
-        BrandId: 2,
-        MyQApplicationId: 'OA9I/hgmPHFp9RYKJqCKfwnhh28uqLJzZ9KOJf1DXoo8N2XAaVX6A1wcLYyWsnnv',
-        ApiVersion: 4.1
+        "Culture": 'en',
+        "BrandId": 2,
+        "MyQApplicationId": appId,
+        "ApiVersion": 4.1
     }
     if (token) {
         return Object.assign(base, token)
